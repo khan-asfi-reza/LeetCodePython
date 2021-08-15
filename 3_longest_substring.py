@@ -37,11 +37,10 @@ s consists of English letters, digits, symbols and spaces.
 def solution(s: str) -> int:
     max_len = 0
     start_point = 0
-
     hashMap = dict()
 
     for key, val in enumerate(s):
-        if val in hashMap:
+        if val in hashMap and hashMap[val] >= start_point:
             start_point = hashMap[val] + 1
 
         else:
@@ -50,3 +49,25 @@ def solution(s: str) -> int:
         hashMap[val] = key
 
     return max_len
+
+
+# Extra Find Longest SubString
+def longest_substring(s: str) -> str:
+    max_len = 0
+    start_point = 0
+    hashMap = dict()
+
+    for key, val in enumerate(s):
+        if val in hashMap and hashMap[val] >= start_point:
+            start_point = hashMap[val] + 1
+
+        else:
+            max_len = max(max_len, key - start_point + 1)
+
+        hashMap[val] = key
+
+    return s[start_point - 1: start_point + max_len - 1]
+
+
+
+
