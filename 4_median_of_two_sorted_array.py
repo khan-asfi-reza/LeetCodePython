@@ -14,7 +14,6 @@ def findMedianSortedArrays(nums1, nums2):
         length = (k // 2) + 1
         is_even = True
 
-
     i = 0
     j = 0
     new_list = []
