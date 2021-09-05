@@ -27,3 +27,4 @@ class Solution:
 
         if self.reverse(x) == x:
             return True
+
